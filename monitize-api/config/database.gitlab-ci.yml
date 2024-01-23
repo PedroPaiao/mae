@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: changeme
+  host: db
+
+development:
+  <<: *default
+  database: easy_pricefy_development
+test:
+  <<: *default
+  database: easy_pricefy_test
+
+production:
+  <<: *default
+  database: easy-pricefy-production
+  username: easy_pricefy
+  password: <%= ENV["DATABASE_PASSWORD"] %>

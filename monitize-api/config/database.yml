@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: secret123
+  host: db
+
+development:
+  <<: *default
+  database: monetize_api_development
+test:
+  <<: *default
+  database: monetize_api_test
+
+production:
+  <<: *default
+  database: monetize-api-production
+  username: monetize_api
+  password: <%= ENV["DATABASE_PASSWORD"] %>

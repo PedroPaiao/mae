@@ -1,0 +1,58 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '3.1.1'
+
+# Backend
+gem 'rails', '~> 7.1.2', '>= 7.0.2.3'
+gem 'pg'
+gem 'puma', '~> 6.4'
+gem 'bootsnap', '>= 1.1.0', require: false
+
+# Facilities
+# gem 'jera_push'
+gem 'business_process', '~> 1.0', '>= 1.0.3'
+gem 'rails_admin', '~> 3.0'
+gem 'enumerize', '~> 2.5'
+
+# Facebook
+gem 'koala', '~> 3.0'
+gem 'omniauth-facebook', '~> 4.0'
+
+# API
+gem 'active_model_serializers', '~> 0.10.13'
+gem 'rack-cors', '~> 1.1', '>= 1.1.1', require: 'rack/cors'
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
+gem 'jbuilder', '~> 2.11', '>= 2.11.5'
+gem 'cpf_cnpj', '~> 0.5.0'
+gem 'has_scope', '~> 0.8.0'
+
+# Image upload
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
+gem 'carrierwave-aws', '~> 1.5'
+
+#Populate and Tasks
+gem 'progress_bar'
+
+# Auth
+gem 'bcrypt', '~> 3.1.7'
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
+gem 'byebug'
+
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'debug', platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails', '~> 5.1', '>= 5.1.1'
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
+  gem 'listen', '~> 3.7', '>= 3.7.1'
+  gem 'spring', '~> 4.0'
+  gem 'mina', '~> 1.2', '>= 1.2.3'
+  gem 'factory_bot'
+  gem 'factory_bot_rails'
+end
+gem "sassc-rails"
+
+gem "dockerfile-rails", ">= 1.6", :group => :development

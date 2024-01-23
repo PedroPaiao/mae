@@ -1,0 +1,6 @@
+namespace :plans do
+  task create_default_plans: :environment do
+    free = Plan.create(name: 'Gratuito', description: 'Plano gratuito', price: 0)
+    plan_1 = Plan.create(name: 'Plano 1', description: 'Plano 1', price: 35.00)
+  end
+end
